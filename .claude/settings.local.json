@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/c/Users/aksha/OneDrive/Desktop/PitchUp-Meet-Play/**)",
+      "Bash(timeout 30 node -e \"require\\('dotenv'\\).config\\(\\); const m=require\\('mongoose'\\); m.connect\\(process.env.MONGO_URI\\).then\\(c=>{console.log\\('OK:',c.connection.host\\);process.exit\\(0\\)}\\).catch\\(e=>{console.error\\('FAIL:',e.message\\);process.exit\\(1\\)}\\)\")",
+      "Bash(nslookup -type=SRV _mongodb._tcp.pitchup.7vvrb8r.mongodb.net)",
+      "Bash(nslookup -type=SRV _mongodb._tcp.pitchup.7vvrb8r.mongodb.net 8.8.8.8)",
+      "Bash(nslookup -type=TXT pitchup.7vvrb8r.mongodb.net 8.8.8.8)",
+      "Bash(timeout 40 node -e \"require\\('dotenv'\\).config\\(\\); const dns=require\\('dns'\\); dns.setServers\\(['8.8.8.8','1.1.1.1']\\); const m=require\\('mongoose'\\); m.connect\\(process.env.MONGO_URI\\).then\\(c=>{console.log\\('OK:',c.connection.host\\);process.exit\\(0\\)}\\).catch\\(e=>{console.error\\('FAIL:',e.message\\);process.exit\\(1\\)}\\)\")",
+      "Bash(timeout 25 node server.js)"
+    ]
+  }
+}
