@@ -7,7 +7,13 @@
       "Bash(nslookup -type=SRV _mongodb._tcp.pitchup.7vvrb8r.mongodb.net 8.8.8.8)",
       "Bash(nslookup -type=TXT pitchup.7vvrb8r.mongodb.net 8.8.8.8)",
       "Bash(timeout 40 node -e \"require\\('dotenv'\\).config\\(\\); const dns=require\\('dns'\\); dns.setServers\\(['8.8.8.8','1.1.1.1']\\); const m=require\\('mongoose'\\); m.connect\\(process.env.MONGO_URI\\).then\\(c=>{console.log\\('OK:',c.connection.host\\);process.exit\\(0\\)}\\).catch\\(e=>{console.error\\('FAIL:',e.message\\);process.exit\\(1\\)}\\)\")",
-      "Bash(timeout 25 node server.js)"
+      "Bash(timeout 25 node server.js)",
+      "Bash(timeout 30 node server.js)",
+      "Bash(curl -s -X POST http://localhost:5000/api/auth/register -H \"Content-Type: application/json\" -d '{\"name\":\"Akshat\",\"email\":\"akshat@test.com\",\"password\":\"123456\",\"sport\":[\"cricket\"],\"city\":\"Mumbai\"}')",
+      "Bash(curl -s -X POST http://localhost:5000/api/auth/login -H \"Content-Type: application/json\" -d '{\"email\":\"akshat@test.com\",\"password\":\"123456\"}' -c /tmp/cookies.txt)",
+      "Bash(curl -s http://localhost:5000/api/auth/me -b /tmp/cookies.txt)",
+      "Bash(node -e \"console.log\\('mongoose', require\\('mongoose/package.json'\\).version\\); console.log\\('express', require\\('express/package.json'\\).version\\)\")",
+      "Bash(pkill -f \"node server.js\")"
     ]
   }
 }

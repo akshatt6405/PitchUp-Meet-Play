@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
-const mongoSanitize = require('express-mongo-sanitize');
+const mongoSanitize = require('./middleware/sanitize');
 const rateLimit = require('express-rate-limit');
 const connectDB = require('./config/db');
 
@@ -15,7 +15,7 @@ const app = express();
 
 // Security middleware
 app.use(helmet());
-app.use(mongoSanitize());
+app.use(mongoSanitize);
 
 // Rate limiting
 const limiter = rateLimit({
@@ -39,6 +39,9 @@ app.use(cors({
 app.get('/', (req, res) => {
   res.json({ message: 'PitchUp API is running' });
 });
+
+// Routes
+app.use('/api/auth', require('./routes/auth'));
 
 const PORT = process.env.PORT || 5000;
 
