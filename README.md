@@ -6,13 +6,13 @@ Find open cricket, football, badminton, and pickleball games near you, join in o
 
 ## Features
 
-- **Browse & filter games** by sport, area, or status — only today's and upcoming games are shown
+- **Browse & filter games** by sport, area, or status  only today's and upcoming games are shown
 - **Create a game** with venue, date, time, squad size, and per-head contribution
-- **Join / leave** in one click — spots update live for everyone on the page
-- **Interactive maps** — every game is pinned on a Leaflet/OpenStreetMap map, no paid API
-- **Squad chat** — real-time group chat per game, visible only to players who have joined
-- **Profile pictures** — upload a photo that appears on your profile and in the chat
-- **69 Mumbai localities** — from Colaba to Virar, Vashi to Thane
+- **Join / leave** in one click  spots update live for everyone on the page
+- **Interactive maps**  every game is pinned on a Leaflet/OpenStreetMap map, no paid API
+- **Squad chat** real-time group chat per game, visible only to players who have joined
+- **Profile pictures**  upload a photo that appears on your profile and in the chat
+- **69 Mumbai localities**  from Colaba to Virar, Vashi to Thane
 
 ---
 
