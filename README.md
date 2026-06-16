@@ -1,4 +1,4 @@
-# PitchUp — Pickup Sports in Mumbai
+# PitchUp Pickup Sports in Mumbai
 
 Find open cricket, football, badminton, and pickleball games near you, join in one click, and chat with your squad in real time.
 
