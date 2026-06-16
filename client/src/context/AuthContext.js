@@ -1,9 +1,11 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-// In production, point at the deployed API (Render). Locally this is empty, so
-// requests stay relative ('/api/...') and the CRA dev proxy forwards them.
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || '';
+// Always call the API on our OWN origin ('/api/...'). In dev the CRA proxy
+// forwards it to localhost:5000; in production a Vercel rewrite forwards it to
+// the Render backend. Keeping it same-origin makes the auth cookie first-party,
+// so it works on mobile browsers that block third-party cookies (Safari, Brave).
+axios.defaults.baseURL = '';
 axios.defaults.withCredentials = true;
 
 const AuthContext = createContext(null);
