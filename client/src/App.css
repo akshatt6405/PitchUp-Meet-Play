@@ -76,7 +76,7 @@ img { max-width: 100%; display: block; }
   font-size: 14.5px;
   font-weight: 600;
   padding: 11px 20px;
-  border-radius: 999px;
+  border-radius: 6px;
   border: 1.5px solid transparent;
   cursor: pointer;
   text-decoration: none !important;
@@ -183,10 +183,7 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--green-700);
-  background: var(--green-100);
-  padding: 3px 9px;
-  border-radius: 999px;
+  color: var(--ink-3);
 }
 
 .nav-links {
@@ -197,7 +194,7 @@ img { max-width: 100%; display: block; }
 
 .nav-link {
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: 5px;
   font-size: 14.5px;
   font-weight: 600;
   color: var(--ink-2);
@@ -371,7 +368,7 @@ img { max-width: 100%; display: block; }
   font-size: 14px;
   font-weight: 600;
   padding: 9px 17px;
-  border-radius: 999px;
+  border-radius: 5px;
   border: 1.5px solid var(--line-strong);
   background: var(--surface);
   color: var(--ink-2);
@@ -551,7 +548,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 5px 11px;
-  border-radius: 999px;
+  border-radius: 4px;
   position: relative;
   z-index: 1;
 }
@@ -1005,12 +1002,12 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 3px 9px;
-  border-radius: 999px;
+  padding: 3px 8px;
+  border-radius: 4px;
 }
 
 .tag-organiser { background: var(--amber-100); color: var(--amber-dark); }
-.tag-you { background: var(--green-100); color: var(--green-900); }
+.tag-you { background: var(--surface); color: var(--ink-2); border: 1px solid var(--line); }
 
 .detail-aside { position: sticky; top: 86px; }
 
@@ -1110,7 +1107,6 @@ img { max-width: 100%; display: block; }
 .form-group textarea:focus {
   outline: none;
   border-color: var(--green-600);
-  box-shadow: 0 0 0 3px rgba(22, 138, 77, 0.15);
 }
 
 .form-group textarea { resize: vertical; }
@@ -1141,7 +1137,6 @@ img { max-width: 100%; display: block; }
 
 .sport-option-active {
   border-color: var(--green-700);
-  box-shadow: 0 0 0 3px rgba(17, 112, 63, 0.15);
 }
 
 .sport-option-img {
@@ -1332,16 +1327,16 @@ img { max-width: 100%; display: block; }
   font-size: 12.5px;
   font-weight: 600;
   color: var(--ink-2);
-  background: var(--bg);
+  background: var(--surface);
   border: 1px solid var(--line);
-  padding: 5px 12px;
-  border-radius: 999px;
+  padding: 4px 10px;
+  border-radius: 4px;
 }
 
 .tag-sport {
-  background: var(--green-100);
-  color: var(--green-900);
-  border-color: transparent;
+  background: var(--surface);
+  color: var(--green-800);
+  border-color: var(--line);
 }
 
 .profile-stats { display: flex; gap: 28px; padding: 0 10px; }
@@ -1375,30 +1370,29 @@ img { max-width: 100%; display: block; }
 
 .tab-bar {
   display: inline-flex;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 5px;
+  border-bottom: 2px solid var(--line);
   margin-bottom: 26px;
-  gap: 4px;
+  gap: 0;
 }
 
 .tab {
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
-  padding: 9px 20px;
-  border-radius: 999px;
+  padding: 10px 22px;
+  border-radius: 0;
   border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
   background: transparent;
   color: var(--ink-2);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .tab-active {
-  background: var(--green-950);
-  color: #fff;
+  color: var(--green-900);
+  border-bottom-color: var(--green-900);
 }
 
 /* ─── Footer ───────────────────────────────────────────────── */
@@ -1555,14 +1549,13 @@ img { max-width: 100%; display: block; }
   font-size: 14.5px;
   padding: 11px 14px;
   border: 1.5px solid var(--line-strong);
-  border-radius: 999px;
+  border-radius: 6px;
   background: var(--surface);
   color: var(--ink);
 }
 .chat-input input:focus {
   outline: none;
   border-color: var(--green-600);
-  box-shadow: 0 0 0 3px rgba(22, 138, 77, 0.15);
 }
 
 .chat-locked { padding: 8px 0; }

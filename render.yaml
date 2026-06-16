@@ -1,0 +1,21 @@
+# Render Blueprint — backend (Express + Socket.IO).
+# In Render: New > Blueprint, point at this repo. It reads this file.
+# You still set the secret env vars (MONGO_URI, CLIENT_URL) in the dashboard.
+services:
+  - type: web
+    name: pitchup-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true   # Render generates a strong secret
+      - key: MONGO_URI
+        sync: false           # paste your Atlas connection string
+      - key: CLIENT_URL
+        sync: false           # set to your Vercel URL after the frontend deploys
