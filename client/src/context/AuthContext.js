@@ -8,6 +8,26 @@ import axios from 'axios';
 axios.defaults.baseURL = '';
 axios.defaults.withCredentials = true;
 
+// Render's free backend can take around a minute to wake after idle. Retry
+// safe GET requests while it starts, then let the page show its normal error.
+axios.interceptors.response.use(
+  response => response,
+  async error => {
+    const config = error.config;
+    if (!config) return Promise.reject(error);
+    const isRead = config.method?.toLowerCase() === 'get';
+    const temporary = !error.response || [502, 503, 504].includes(error.response.status);
+    config._wakeRetries = config._wakeRetries || 0;
+    if (!isRead || !temporary || config._wakeRetries >= 7) {
+      return Promise.reject(error);
+    }
+    const delays = [2000, 4000, 7000, 10000, 12000, 12000, 12000];
+    const delay = delays[config._wakeRetries++];
+    await new Promise(resolve => setTimeout(resolve, delay));
+    return axios(config);
+  }
+);
+
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
